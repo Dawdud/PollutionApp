@@ -1,17 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Header></Header>
+    <div class="columns is-full is-centered is-vcentered">
+      <CitiesView />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import CitiesView from "./components/CitiesView";
+import Header from "./components/layout/Header";
 
 export default {
   name: "app",
+  data() {
+    return {
+      searchedValue: null
+    };
+  },
+
   components: {
-    HelloWorld
+    CitiesView,
+    Header
   }
 };
 </script>
@@ -22,7 +32,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.columns.is-vcentered {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 </style>
