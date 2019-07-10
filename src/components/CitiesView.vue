@@ -42,7 +42,7 @@ export default {
           .get(
             `https://api.openaq.org/v1/measurements?country=${
               searchedValue[0]
-            }&sort[]=desc&order_by[]=value&parameter[]=pm25&parameter[]=pm10)`
+            }&sort[]=desc&order_by[]=value&limit=250&parameter[]=pm25&parameter[]=pm10)`
           )
           .then(resp => {
             console.log(resp);

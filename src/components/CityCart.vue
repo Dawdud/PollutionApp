@@ -44,6 +44,7 @@ export default {
           `https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=${cityName}&limit=10&namespace=0`
         )
         .then(resp => {
+          console.log(resp);
           this.cityDescription = resp.data[2][0];
         })
         .catch(error => {
