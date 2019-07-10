@@ -23,7 +23,6 @@
     </modal>
   </div>
 </template>
-
 <script>
 import axios from "axios";
 import modal from "./layout/Modal";
@@ -38,7 +37,6 @@ export default {
       cityDescription: null
     };
   },
-
   methods: {
     getDescription(cityName) {
       axios
@@ -47,9 +45,11 @@ export default {
         )
         .then(resp => {
           this.cityDescription = resp.data[2][0];
+        })
+        .catch(error => {
+          console.log(error.resp);
         });
     },
-
     showModal(city) {
       this.city = city;
       this.isModalVisible = true;

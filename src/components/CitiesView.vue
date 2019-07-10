@@ -4,7 +4,6 @@
     <CityCart :citiesList="citiesList" />
   </div>
 </template>
-
 <script>
 import Autocomplete from "./Autocomplete";
 import CityCart from "./CityCart";
@@ -43,10 +42,14 @@ export default {
           .get(
             `https://api.openaq.org/v1/measurements?country=${
               searchedValue[0]
-            }&sort[]=desc`
+            }&sort[]=desc&order_by[]=value&parameter[]=pm25&parameter[]=pm10)`
           )
           .then(resp => {
+            console.log(resp);
             this.results = resp.data.results.map(elem => elem.city);
+          })
+          .catch(error => {
+            console.log(error.resp);
           });
       }
     }

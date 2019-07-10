@@ -13,7 +13,6 @@
         </slot>
         <button class="delete" aria-label="close" @click="$emit('close')"></button>
       </header>
-
       <section class="modal-card-body">
         <article class="media-content">
           <slot name="body">

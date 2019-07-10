@@ -5,7 +5,6 @@
         <a class="navbar-item">
           <p class="is-size-4-mobile is-size-3-tablet">PollutedApp</p>
         </a>
-
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
